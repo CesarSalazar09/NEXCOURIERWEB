@@ -14,8 +14,7 @@ function Nomina() {
   const [fechaContrato, setFechaContrato] = useState(null);
   const [empleados, setEmpleados] = useState([]);
   const [mostrarTabla, setMostrarTabla] = useState(false);
-  const [montos, setNomina] = useState([]);
-
+  const [montos, setMontos] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +34,12 @@ function Nomina() {
       try {
         const response = await fetch(`${base_url}api/empleados/nomina`);
         const jsonData = await response.json();
-        setNomina(jsonData);
+        if (Array.isArray(jsonData)) {
+          setMontos(jsonData);
+        } else {
+          console.error('La respuesta de la API no es un array', jsonData);
+          setMontos([]); // O manejarlo de alguna otra manera
+        }
       } catch (error) {
         console.log(error.message);
       }
@@ -127,37 +131,34 @@ function Nomina() {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((empleado, index) => {
-                    if (index < 4) {
-                      // Limitar a 4 filas
-                      if (empleado.asignacion_familiar === false) {
-                        empleado.asignacion_familiar = 'No';
-                      } else {
-                        empleado.asignacion_familiar = 'Sí';
-                      }
-                      if (empleado.planilla === false) {
-                        empleado.planilla = 'No';
-                      } else {
-                        empleado.planilla = 'Sí';
-                      }
+                  {data.slice(0, 4).map((empleado) => {
+                    const asignacionFamiliar = empleado.asignacion_familiar ? 'Sí' : 'No';
+                    const planilla = empleado.planilla ? 'Sí' : 'No';
+                    const monto = montos.find((monto) => monto.dni === empleado.dni)?.monto || '';
 
-                      const monto = montos.find((monto) => monto.dni === empleado.dni)?.monto || '';
-
-                      return (
-                        <tr key={empleado.dni}>
-                          <td>{empleado.dni}</td>
-                          <td>{empleado.primer_nombre + ' ' + empleado.segundo_nombre}</td>
-                          <td>{empleado.primer_apellido + ' ' + empleado.segundo_apellido}</td>
-                          <td>{empleado.correo_empresa}</td>
-                          <td>{empleado.planilla}</td>
-                          <td>{empleado.fecha_contrato}</td>
-                          <td>{empleado.asignacion_familiar}</td>
-                          <td>{empleado.sueldo_base}</td>
-                          <td>{monto}</td>
-                        </tr>
-                      );
-                    }
-                    return null;
+                    return (
+                      <tr key={empleado.dni}>
+                        <td>{empleado.dni}</td>
+                        <td>{`${empleado.primer_nombre} ${empleado.segundo_nombre}`}</td>
+                        <td>{`${empleado.primer_apellido} ${empleado.segundo_apellido}`}</td>
+                        <td>{empleado.bono_desempeno}</td>
+                        <td>{empleado.pago_utilidades}</td>
+                        <td>{empleado.movilidad}</td>
+                        <td>{empleado.pago_suplencia}</td>
+                        <td>{empleado.pago_especiales}</td>
+                        <td>{empleado.cts}</td>
+                        <td>{empleado.afp}</td>
+                        <td>{empleado.sueldo_base}</td>
+                        <td>{empleado.bono_desempeno + 
+               empleado.pago_utilidades + 
+               empleado.movilidad + 
+               empleado.pago_suplencia + 
+               empleado.pago_especiales + 
+               empleado.cts + 
+               empleado.afp + 
+               empleado.sueldo_base}</td>
+                      </tr>
+                    );
                   })}
                 </tbody>
               </table>
@@ -185,28 +186,22 @@ function Nomina() {
                 </thead>
                 <tbody>
                   {empleados.map((empleado) => {
-                    if (empleado.asignacion_familiar === false) {
-                      empleado.asignacion_familiar = 'No';
-                    } else {
-                      empleado.asignacion_familiar = 'Sí';
-                    }
-                    if (empleado.planilla === false) {
-                      empleado.planilla = 'No';
-                    } else {
-                      empleado.planilla = 'Sí';
-                    }
-
+                    const asignacionFamiliar = empleado.asignacion_familiar ? 'Sí' : 'No';
+                    const planilla = empleado.planilla ? 'Sí' : 'No';
                     const monto = montos.find((monto) => monto.dni === empleado.dni)?.monto || '';
 
                     return (
                       <tr key={empleado.dni}>
                         <td>{empleado.dni}</td>
-                        <td>{empleado.primer_nombre + ' ' + empleado.segundo_nombre}</td>
-                        <td>{empleado.primer_apellido + ' ' + empleado.segundo_apellido}</td>
-                        <td>{empleado.correo_empresa}</td>
-                        <td>{empleado.planilla}</td>
-                        <td>{empleado.fecha_contrato}</td>
-                        <td>{empleado.asignacion_familiar}</td>
+                        <td>{`${empleado.primer_nombre} ${empleado.segundo_nombre}`}</td>
+                        <td>{`${empleado.primer_apellido} ${empleado.segundo_apellido}`}</td>
+                        <td>{empleado.bono_desempeno}</td>
+                        <td>{empleado.pago_utilidades}</td>
+                        <td>{empleado.movilidad}</td>
+                        <td>{empleado.pago_suplencia}</td>
+                        <td>{empleado.pago_especiales}</td>
+                        <td>{empleado.cts}</td>
+                        <td>{empleado.afp}</td>
                         <td>{empleado.sueldo_base}</td>
                         <td>{monto}</td>
                       </tr>
