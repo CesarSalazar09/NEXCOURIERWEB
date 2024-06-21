@@ -1,0 +1,140 @@
+/*Importamos de google fonts algunas fuentes de letras para la pagina web*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+/* El diseño de la caja opciones*/
+*{
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+}
+html{
+    /*Me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+.inicio{
+    background-color: #8ECAE6;
+    height: 80vh;
+    width: auto;
+    /* align-items: center; */
+}
+.inicio .titulo {
+    position: relative;
+    height: fit-content;
+    text-align: center;
+}
+
+.inicio .titulo h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 41.45px;
+    letter-spacing: -2%;
+    text-align: center;
+}
+
+.fila {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #219EBC;
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.fila .campo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 50px;
+    padding: 20px;
+}
+
+.fila .campo input{
+    width: 150px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.fila .campo-apellido{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 50px;
+}
+
+.fila .campo-apellido input{
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.fila .boton {
+    margin-left: 40px;
+    background-color: #FFB703;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 50px;
+    font-size: 16px;
+}
+
+.registrar-empleado {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    /* Opcional: ajusta el valor si es necesario */
+}
+
+.boton-registro {
+    background-color: #FFB703;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.boton-registro:hover {
+    background-color: #FFA500;
+}
+
+.tabla-container {
+  margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 80%; /* Ajusta el ancho máximo según sea necesario */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabla-empleados {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-empleados th,
+.tabla-empleados td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+  background-color: white;
+}
+
+.tabla-empleados th {
+  font-weight: bold;
+}
+
+.tabla-empleados tr:nth-child(even) {
+  background-color: white;
+}

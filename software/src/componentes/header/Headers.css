@@ -1,0 +1,118 @@
+/*Importamos de google fonts algunas fuentes de letras para la pagina web*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+/* El diseño de la caja opciones*/
+*{
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+}
+html{
+    /*Me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+/* MENU ENCABEZADO*/
+.contenedor-header{
+    background-color: white;
+    height: 60px; /* Ajusta la altura deseada */
+    width:100%;
+    justify-content: center;
+    align-items: center;
+} 
+.contenedor-header header{
+    display: flex;
+    /* justify-content: end; */
+    /* width: 50%; */
+    margin-top: 0px;
+}
+.contenedor-header header .logo a{
+    /* El logo que dice Usuario*/
+    font-family: 'Righteous';
+    font-size: 36px;
+    color: #66fcf1;
+    text-decoration: none;
+}
+.contenedor-header header .logo a:last-child {
+    color: orange;
+    font-family: 'Righteous';
+    font-size: 36px;
+    text-decoration: none;
+}
+.contenedor-header header nav{
+    justify-content: end;
+    display: flex;
+    width: fit-content;
+}
+.contenedor-header header ul{
+    /* La pequeña lista de portafolio*/
+    display: flex;
+    list-style: none;
+    width: 50%;
+    /* margin-left: 50%; */
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-header header nav .sesion{
+    margin-left: 130px;
+}
+.contenedor-header header nav .sesion a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-header header nav ul li a{
+    /* Lista más ordenada de la lista*/ 
+    text-align:center;
+    font-size: 14px;
+    color: #000000;
+    margin: 0 15px;
+    padding: 3px;
+    /*Cuanto demora en cambiar el color con "hover" */ 
+    transition: 0.5s;
+    text-decoration: none;
+}
+/*Para darle color cuando seleccionmes una sección del portafolio */
+.contenedor-header header nav ul li a:hover{
+    color: #66fcf1;
+}
+
+.nav-responsive{
+    background-color: #66fcf1;
+    color:#fff;
+    /* tamaño */
+    padding: 5px 10px;
+    /* border-radius = 0px entonces es sin curvas en las esquinas */ 
+    border-radius: 5px;
+    /*Al pasar el mouse encima sale una manito */
+    cursor:pointer;
+    display:none;
+}
+/* SECCION RESPONSIVE */
+@media screen and (max-width:980px){
+    nav{
+        display: none;
+    }
+    .nav-responsive{
+        display: block;
+    }
+    nav.responsive{
+        display: block;
+        position: absolute;
+        right: 33px;
+        top: 75px;
+        width: 200px;
+    }
+    nav.responsive ul{
+        /*se utiliza para dar mayor prioridad a una instrucciones, 
+        de manera que las instrucciones siguientes no 
+        puedan sobrescribirla */
+        display: block !important;
+        
+    }
+    nav.responsive ul li{
+        border-bottom: 1px solid #fff;
+        padding: 10px 0;
+        text-align: left;
+        
+    }
+}

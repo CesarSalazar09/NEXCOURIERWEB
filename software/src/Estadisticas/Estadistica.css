@@ -1,0 +1,50 @@
+/*Importamos de google fonts algunas fuentes de letras para la pagina web*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+/* El diseño de la caja opciones*/
+*{
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+}
+html{
+    /*Me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+/*SECCION INICIO */
+.inicio{
+    background-color: #8ECAE6;
+    height: 80vh;
+    width: auto;
+    /* align-items: center; */
+}
+.inicio .titulo {
+    position: relative;
+    height: fit-content;
+    text-align: center;
+}
+
+.inicio .titulo h1 {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+.inicio .graficos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 10%;
+}
+.inicio .graficos .grafico{
+    display: block;
+    width: max-content;
+    text-align: center;
+}
+.inicio .graficos .grafico p{
+    width: 300px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+}
