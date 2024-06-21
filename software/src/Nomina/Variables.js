@@ -3,6 +3,7 @@ import './VariablesParaPagos.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../Empleados/Empleados.css';
+import Footers from '../componentes/footer/Footers';
 
 const base_url = 'http://127.0.0.1:5000/';
 let mostrarTablaPrincipal = true;
@@ -36,54 +37,59 @@ function VariablesParaPagos() {
   };
 
   return (
-    <div className="form-container">
-      <h2>Variables para Pagos</h2>
-      <form onSubmit={handleGuardarDatos}>
-        <div className="form-group">
-          <label>Porcentaje de seguro AFP</label>
-          <input
-            type="text"
-            value={afp}
-            onChange={(e) => setAfp(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Porcentaje seguro ONP</label>
-          <input
-            type="text"
-            value={onp}
-            onChange={(e) => setOnp(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Porcentaje otro seguro</label>
-          <input
-            type="text"
-            value={otroSeguro}
-            onChange={(e) => setOtroSeguro(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Monto planilla</label>
-          <input
-            type="text"
-            value={montoPlanilla}
-            onChange={(e) => setMontoPlanilla(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Monto asignación familiar</label>
-          <input
-            type="text"
-            value={montoAsignacionFamiliar}
-            onChange={(e) => setMontoAsignacionFamiliar(e.target.value)}
-          />
-        </div>
-        <div className="form-buttons">
-          <button type="submit" className="save-button">Guardar Datos</button>
-          <button type="button" className="cancel-button" onClick={handleCancelar}>Cancelar</button>
-        </div>
-      </form>
+    <div className="inicio">
+      <div className='titulo'>
+        <h1>VARIABLES PARA PAGOS</h1>
+      </div>
+      <div className="form-container">
+        <form onSubmit={handleGuardarDatos}>
+          <div className="form-group">
+            <label>Porcentaje de seguro AFP</label>
+            <input
+              type="text"
+              value={afp}
+              onChange={(e) => setAfp(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Porcentaje seguro ONP</label>
+            <input
+              type="text"
+              value={onp}
+              onChange={(e) => setOnp(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Porcentaje otro seguro</label>
+            <input
+              type="text"
+              value={otroSeguro}
+              onChange={(e) => setOtroSeguro(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Monto planilla</label>
+            <input
+              type="text"
+              value={montoPlanilla}
+              onChange={(e) => setMontoPlanilla(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Monto asignación familiar</label>
+            <input
+              type="text"
+              value={montoAsignacionFamiliar}
+              onChange={(e) => setMontoAsignacionFamiliar(e.target.value)}
+            />
+          </div>
+          <div className="form-buttons">
+            <button type="submit" className="save-button">Guardar Datos</button>
+            <button type="button" className="cancel-button" onClick={handleCancelar}>Cancelar</button>
+          </div>
+        </form>
+      </div>
+      <Footers />
     </div>
   );
 }

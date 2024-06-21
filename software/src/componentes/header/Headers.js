@@ -24,7 +24,7 @@ const  Headers= () =>{
                     </ul>
                     <div class="sesion">
                         <a href="#">Administrador</a>
-                        <a href="#">Lobo@uni.pe</a>
+                        <a href="#">Pepe@uni.pe</a>
                     </div>
                 </nav>
                 <div class="nav-responsive" onclick="mostrarOcultarMenu()">
