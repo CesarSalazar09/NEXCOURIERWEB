@@ -7,6 +7,19 @@ ChartJS.register(PieController, ArcElement, Tooltip, Legend);
 const options = {
   responsive: true,
   maintainAspectRatio: false,
+  plugins: {
+    tooltip: {
+      callbacks: {
+        label: function (context) {
+          const label = context.label || '';
+          const value = context.raw;
+          const total = context.chart.data.datasets[0].data.reduce((acc, cur) => acc + cur, 0);
+          const percentage = ((value / total) * 100).toFixed(2) + '%';
+          return `${label}: ${value} (${percentage})`;
+        },
+      },
+    },
+  },
 };
 
 export default function PieReq18() {
@@ -14,8 +27,8 @@ export default function PieReq18() {
     labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
     datasets: [
       {
-        label: 'Porcentaje de Inasistencia',
-        data: [5, 10, 15, 20, 25, 30],
+        label: 'Porcentaje de Bonificaciones',
+        data: [3000, 1000, 1500, 2000, 2500, 3000],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(255, 206, 86, 0.2)',

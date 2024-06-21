@@ -11,7 +11,7 @@ const options = {
   scales: {
     y: {
       min: 0,
-      max: 10
+      max: 120
     },
     x: {
       ticks: {
@@ -27,7 +27,7 @@ export default function BarsReq16() {
     datasets: [
       {
         label: 'Promedio Horas',
-        data: [5, 6, 7, 8, 9, 10],
+        data: [70, 80, 70, 90, 100, 110],
         backgroundColor: 'rgba(0, 220, 195, 0.5)'
       }
     ]

@@ -34,7 +34,7 @@ const options = {
   scales: {
     y: {
       min: 0,
-      max: 10,
+      max: 10000,
     },
     x: {
       ticks: {
@@ -50,7 +50,7 @@ export default function BarsReq20() {
     datasets: [
       {
         label: 'Horas trabajadas promedio',
-        data: [7, 8.5, 9, 10],
+        data: [7000, 8500, 9000, 6000],
         backgroundColor: 'rgba(0, 220, 195, 0.5)',
       },
     ],

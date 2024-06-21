@@ -11,7 +11,7 @@ const options = {
   scales: {
     y: {
       min: 0,
-      max: 1
+      max: 200
     },
     x: {
       ticks: {
@@ -26,8 +26,8 @@ export default function BarsReq17() {
     labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
     datasets: [
       {
-        label: 'Horas Extra',
-        data: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
+        label: 'Deduccion Promedio',
+        data: [200, 230, 140, 125, 130, 185],
         backgroundColor: 'rgba(255, 99, 132, 0.5)'
       }
     ]

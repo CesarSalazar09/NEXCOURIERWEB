@@ -44,7 +44,7 @@ const options = {
   scales: {
     y: {
       min: 0,
-      max: 10,
+      max: 1200,
     },
     x: {
       ticks: { color: 'rgba(0, 220, 195)' },
@@ -62,8 +62,8 @@ export default function BarsReq19() {
     ],
     datasets: [
       {
-        label: 'Horas Trabajadas',
-        data: [7, 8.5, 9, 10],
+        label: 'Deducción',
+        data: [700, 850, 900, 1000],
         backgroundColor: 'rgba(0, 220, 195, 0.5)',
       },
     ],

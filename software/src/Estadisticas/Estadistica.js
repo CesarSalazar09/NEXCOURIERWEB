@@ -30,13 +30,13 @@ function Estadistica() {
                         </div>
                     </div>
                     <div class="grafico">
-                        <p className="m-2"><b>Promedio de Horas Extras Por Mes </b></p>
+                        <p className="m-2"><b>Promedio de Deducciones Por Mes </b></p>
                         <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"300px", height:"150px"}}>
                             <BarsReq17 />
                         </div>
                     </div>
                     <div class="grafico">
-                        <p className="m-2"><b>Porcentaje de inasistencia Por Mes</b></p>
+                        <p className="m-2"><b>Porcentaje de bonificaciones Por Mes</b></p>
                         <div className="bg-light mx-auto border border-2 border-primary" style={{width:"300px", height:"150px"}}>
                             <div style={{width:"100%", height:"100%", padding:"10px 0"}}>
                                 <PieReq18 />                       
@@ -44,13 +44,13 @@ function Estadistica() {
                         </div>
                     </div>
                     <div class="grafico">
-                        <p className="m-2"><b>Trabajadores con Mayor cantidad de horas Por Departamento (Último mes)</b></p>
+                        <p className="m-2"><b>Trabajadores con Mayor Deducción Por Departamento (Último mes)</b></p>
                         <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"300px", height:"150px"}}>
                             <BarsReq19 />
                         </div>
                     </div>
                     <div class="grafico">
-                        <p className="m-2"><b>Horas trabajadas promedio en el ultimo año Por Departamento</b></p>
+                        <p className="m-2"><b>Monto promedio en el ultimo año Por Departamento</b></p>
                         <div className="bg-light mx-auto px-2 border border-2 border-primary" style={{width:"300px", height:"150px"}}>
                             <BarsReq20 />
                         </div>
