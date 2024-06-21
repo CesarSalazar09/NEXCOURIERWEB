@@ -4,7 +4,8 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import Headers from './componentes/header/Headers'
 import Empleados from './Empleados/Empleados';
-import Variables from './Pagos/Variables';
+//import VariablesParaPagos from './Pagos/Variables';
+
 ReactDOM.render(
   <BrowserRouter>
     <Headers/>

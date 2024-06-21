@@ -3,6 +3,9 @@ import {Link, Routes, Route} from 'react-router-dom';
 import Estadistica from '../../Estadisticas/Estadistica';
 import Pagos from '../../Pagos/Pagos';
 import Empleados from '../../Empleados/Empleados';
+import VariablesParaPagos from '../../Nomina/Variables';
+import Nomina from '../../Nomina/Nomina';
+
 const  Headers= () =>{
     return(
         <div class="contenedor-header">
@@ -14,10 +17,10 @@ const  Headers= () =>{
                     <ul>
                         <li><Link to='/'>INICIO</Link></li>
                         <li><Link to='/empleados'>EMPLEADOS</Link></li>
-                        <li><Link to='/'>REPORTES ASISTENCIAS</Link></li>
-                        <li><Link to='/' >ASISTENCIA</Link></li>
                         <li><Link to='/pagos'>PAGOS</Link></li>
+                        <li><Link to='/nomina'>NÓMINA</Link></li>
                         <li><Link to='/estadisticas'>ESTADISTICAS</Link></li>
+                        <li><Link to='/variables'>VARIABLES</Link></li>
                     </ul>
                     <div class="sesion">
                         <a href="#">Administrador</a>
@@ -32,7 +35,9 @@ const  Headers= () =>{
                 <Route path='/' element={<Pagos />}/>
                 <Route path='/empleados' element={<Empleados />}/>
                 <Route path='/pagos' element={<Pagos />}/>
+                <Route path='/nomina' element={<Nomina />}/>
                 <Route path='/estadisticas' element={<Estadistica />}/>
+                <Route path='/variables' element={<VariablesParaPagos />}/>
             </Routes>
         </div>
     )

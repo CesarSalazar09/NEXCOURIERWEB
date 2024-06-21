@@ -5,7 +5,7 @@ function Footers(){
         <footer>
             <div class="copyright">
                 <p>
-                    © Copyright 2023 Team Kekeros
+                    © Copyright 2024 Team Kekeros
                 </p>
             </div>
         </footer>
