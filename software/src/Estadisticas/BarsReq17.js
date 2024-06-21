@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
-import axios from 'axios';
 
 const options = {
   responsive: true,
@@ -23,33 +21,17 @@ const options = {
   }
 };
 
-export default function BarsReq16() {
-  const [chartData, setChartData] = useState(null);
+export default function BarsReq17() {
+  const chartData = {
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+    datasets: [
+      {
+        label: 'Horas Extra',
+        data: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
+        backgroundColor: 'rgba(255, 99, 132, 0.5)'
+      }
+    ]
+  };
 
-  useEffect(() => {
-    axios.get('http://127.0.0.1:5000/api/asistencias/horas-extra')
-      .then(response => {
-        const data = response.data;
-        const meses = data.map(item => `Mes ${item.mes}`);
-        const horasExtra = data.map(item => item.horas_extra);
-
-        const chartData = {
-          labels: meses,
-          datasets: [
-            {
-              label: 'Horas Extra',
-              data: horasExtra,
-              backgroundColor: 'rgb(255, 99, 132, 0.5)'
-            }
-          ]
-        };
-
-        setChartData(chartData);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
-
-  return chartData ? <Bar data={chartData} options={options} /> : null;
+  return <Bar data={chartData} options={options} />;
 }

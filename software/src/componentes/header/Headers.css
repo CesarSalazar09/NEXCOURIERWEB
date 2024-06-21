@@ -6,6 +6,7 @@
     font-family: 'Work Sans';
     margin: 0;
     padding: 0;
+
 }
 html{
     /*Me permite deslizar cuando hago clic en los links del menu */
@@ -21,9 +22,10 @@ html{
 } 
 .contenedor-header header{
     display: flex;
-    /* justify-content: end; */
-    /* width: 50%; */
     margin-top: 0px;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .contenedor-header header .logo a{
     /* El logo que dice Usuario*/
