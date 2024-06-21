@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './VariablesParaPagos.css';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../Empleados/Empleados.css';
 import Footers from '../componentes/footer/Footers';
+import ModalToast from '../componentes/toast/ModalToast'; // Ajusta la ruta según tu estructura de proyecto
 
 const base_url = 'http://127.0.0.1:5000/';
 let mostrarTablaPrincipal = true;
@@ -14,6 +14,7 @@ function VariablesParaPagos() {
   const [otroSeguro, setOtroSeguro] = useState('');
   const [montoPlanilla, setMontoPlanilla] = useState('');
   const [montoAsignacionFamiliar, setMontoAsignacionFamiliar] = useState('');
+  const [showToast, setShowToast] = useState(false);
 
   const handleGuardarDatos = (e) => {
     e.preventDefault();
@@ -25,6 +26,7 @@ function VariablesParaPagos() {
       montoPlanilla,
       montoAsignacionFamiliar,
     });
+    setShowToast(true);
   };
 
   const handleCancelar = () => {
@@ -42,6 +44,7 @@ function VariablesParaPagos() {
         <h1>VARIABLES PARA PAGOS</h1>
       </div>
       <div className="form-container">
+        {showToast && <ModalToast message="Datos guardados correctamente" onClose={() => setShowToast(false)} />}
         <form onSubmit={handleGuardarDatos}>
           <div className="form-group">
             <label>Porcentaje de seguro AFP</label>
